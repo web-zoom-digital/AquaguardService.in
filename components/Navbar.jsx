@@ -206,9 +206,7 @@ export default function Navbar() {
             <Phone size={14} style={{ marginRight: '6px' }} /> Call
           </a>
         </div>
-        <div className="bottom-nav-timing">
-          Mon–Sun: 8:00 AM – 11:30 PM
-        </div>
+
       </nav>
     </>
   );
