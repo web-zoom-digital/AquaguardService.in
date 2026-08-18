@@ -147,12 +147,6 @@ export default function HomePage() {
       {/* CONTACT FORM */}
       <ContactForm />
 
-      {/* MOBILE BOTTOM NAV */}
-      <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
-        <a href="tel:07030370076" className="mobile-nav-item active"><Phone size={18} /><span>Call Now</span></a>
-        <a href="https://wa.me/917030370076" className="mobile-nav-item" target="_blank" rel="noopener"><WhatsAppIcon size={20} /><span>WhatsApp</span></a>
-        <Link href="/contact" className="mobile-nav-item"><ClipboardList size={18} /><span>Book</span></Link>
-      </nav>
     </main>
   );
 }
