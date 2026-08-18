@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/ContactForm';
 import { MapPin, Search, Phone, Clock, ArrowRight } from 'lucide-react';
 import { locations, searchTerms } from './locationData';
+import LocationGridClient from '@/components/LocationGridClient';
 
 export const metadata = {
   title: 'RO Service Areas in Pune | RO Repair Near Me | AquaguardService',
@@ -12,26 +14,19 @@ export default function LocationsPage() {
   return (
     <main>
       {/* HERO BANNER */}
-      <div className="section-banner" id="locations">
-        <div className="section-banner-bg" style={{ backgroundImage: "url('/images/ro-purifier.jpg')" }}></div>
-        <div className="section-banner-overlay" style={{ background: 'linear-gradient(135deg,rgba(5,20,45,0.82) 0%,rgba(0,60,30,0.68) 60%,rgba(5,20,45,0.60) 100%)' }}></div>
-        <div className="container">
-          <div className="section-banner-content" style={{ maxWidth: '700px' }}>
-            <div className="section-tag"><MapPin size={18} /> Service Areas</div>
-            <h1>RO Service Near Me —<br />Pune &amp; Pimpri-Chinchwad</h1>
-            <p>Expert RO water purifier repair, installation &amp; AMC across all major areas of Pune and Pimpri-Chinchwad. Same-day service available in most areas.</p>
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '0' }}>
-              <a href="tel:07030370076" className="btn btn-call"><Phone size={14} /> Call Now</a>
-              <a href="https://wa.me/917030370076" target="_blank" rel="noopener" className="btn btn-ghost">WhatsApp Us</a>
-            </div>
-            <div className="section-banner-stats">
-              <div><span className="section-banner-stat-num">35+</span><span className="section-banner-stat-label">Areas Covered</span></div>
-              <div><span className="section-banner-stat-num">2–4 hrs</span><span className="section-banner-stat-label">Response Time</span></div>
-              <div><span className="section-banner-stat-num">7 Days</span><span className="section-banner-stat-label">Open All Week</span></div>
-            </div>
-          </div>
+      <PageHero
+        tag={<><MapPin size={18} /> Service Areas</>}
+        title={<>RO Service Near Me —<br />Pune & Pimpri-Chinchwad</>}
+        subtitle="Expert RO water purifier repair, installation & AMC across all major areas of Pune and Pimpri-Chinchwad. Same-day service available in most areas."
+        image="/images/ro-purifier.jpg"
+        imageAlt="RO water purifier service near me"
+      >
+        <div className="section-banner-stats" style={{ margin: 0, justifyContent: 'flex-start', gap: '32px' }}>
+          <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>35+</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Areas Covered</span></div>
+          <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>2–4 hrs</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Response Time</span></div>
+          <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>7 Days</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Open All Week</span></div>
         </div>
-      </div>
+      </PageHero>
 
       {/* LOCATION CARDS GRID */}
       <section className="section" aria-labelledby="areas-heading">
@@ -41,19 +36,7 @@ export default function LocationsPage() {
             <h2 id="areas-heading" className="section-title">Find RO Service in Your Area</h2>
             <p className="section-subtitle">Click on your area to see dedicated RO service details, pricing &amp; availability near you.</p>
           </div>
-          <div className="loc-area-grid">
-            {locations.map((loc, i) => (
-              <Link
-                key={loc.slug}
-                href={`/locations/${loc.slug}`}
-                className={`loc-area-card reveal reveal-delay-${(i % 4) + 1}`}
-              >
-                <div className="loc-area-card-icon"><MapPin size={18} /></div>
-                <span className="loc-area-card-name">{loc.name}</span>
-                <span className="loc-area-card-cta">View Service <ArrowRight size={13} /></span>
-              </Link>
-            ))}
-          </div>
+          <LocationGridClient locations={locations} />
         </div>
       </section>
 

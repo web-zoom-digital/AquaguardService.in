@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/ContactForm';
 import { MapPin, Phone, Wrench, Settings, RefreshCw, ClipboardList, ArrowLeft, CheckCircle } from 'lucide-react';
 import { locations } from '../locationData';
@@ -45,29 +46,20 @@ export default async function LocationPage({ params }) {
   return (
     <main>
       {/* HERO */}
-      <div className="section-banner" id={`loc-${slug}`}>
-        <div className="section-banner-bg" style={{ backgroundImage: "url('/images/ro-purifier.jpg')" }}></div>
-        <div className="section-banner-overlay" style={{ background: 'linear-gradient(135deg,rgba(5,20,45,0.82) 0%,rgba(0,60,30,0.68) 60%,rgba(5,20,45,0.60) 100%)' }}></div>
-        <div className="container">
-          <div className="section-banner-content">
-            <Link href="/locations" className="loc-back-link">
-              <ArrowLeft size={15} /> All Service Areas
-            </Link>
-            <div className="section-tag" style={{ marginTop: '16px' }}><MapPin size={18} /> {loc.name}</div>
-            <h1>RO Service in {loc.name}</h1>
-            <p>Expert RO water purifier repair, installation &amp; AMC service right in {loc.name}. Certified technicians available same day. All brands covered.</p>
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-              <a href="tel:07030370076" className="btn btn-call"><Phone size={14} /> Call Now — 07030370076</a>
-              <a href="https://wa.me/917030370076" target="_blank" rel="noopener" className="btn btn-ghost">WhatsApp Us</a>
-            </div>
-            <div className="section-banner-stats">
-              <div><span className="section-banner-stat-num">Same Day</span><span className="section-banner-stat-label">Service Available</span></div>
-              <div><span className="section-banner-stat-num">All Brands</span><span className="section-banner-stat-label">Supported</span></div>
-              <div><span className="section-banner-stat-num">7 Days</span><span className="section-banner-stat-label">Open All Week</span></div>
-            </div>
-          </div>
+      <PageHero
+        tag={<><MapPin size={18} /> {loc.name}</>}
+        title={`RO Service in ${loc.name}`}
+        subtitle={`Expert RO water purifier repair, installation & AMC service right in ${loc.name}. Certified technicians available same day. All brands covered.`}
+        image="/images/ro-purifier.jpg"
+        imageAlt={`RO service in ${loc.name}`}
+        breadcrumb={{ href: '/locations', label: 'Locations' }}
+      >
+        <div className="section-banner-stats" style={{ margin: 0, justifyContent: 'flex-start', gap: '32px' }}>
+          <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>Same Day</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Service Available</span></div>
+          <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>All Brands</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Supported</span></div>
+          <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>7 Days</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Open All Week</span></div>
         </div>
-      </div>
+      </PageHero>
 
       {/* SERVICES */}
       <section className="section" aria-labelledby="loc-services-heading">

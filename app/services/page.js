@@ -32,8 +32,8 @@ export default function ServicesPage() {
         tag={<span><Wrench size={18} style={{ display: 'inline', verticalAlign: 'text-bottom' }} /> Our Services</span>}
         title="Complete RO Water Purifier Services in Pune"
         subtitle="From routine filter changes to complex membrane repairs — we handle everything for all brands of RO water purifiers across Pune & Pimpri-Chinchwad. Certified technicians. Same-day slots available."
-        image="/images/hero-technician.jpg"
-        imageAlt="Aquaguard RO Service Technician in Pune"
+        image="/images/premium-service-hero.jpg"
+        imageAlt="Premium RO Service Team in Pune"
       >
         <div className="section-banner-stats" style={{ margin: 0, justifyContent: 'flex-start', gap: '32px' }}>
           <div><span className="section-banner-stat-num" style={{ color: 'white', fontSize: '1.8rem' }}>6</span><span className="section-banner-stat-label" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>Service Types</span></div>

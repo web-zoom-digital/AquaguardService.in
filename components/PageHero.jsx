@@ -1,47 +1,57 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
+import { Phone, CheckCircle } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 // Server Component — no 'use client'
 export default function PageHero({ tag, title, subtitle, image, imageAlt, breadcrumb, breadcrumbLabel, children }) {
   return (
-    <section
-      className="page-hero has-image"
-      aria-label={title}
-      style={{ backgroundImage: `url('${image}')` }}
-    >
+    <section className="hero" aria-label={title}>
+      <div className="hero-grid-pattern" aria-hidden="true"></div>
       <div className="container">
-        <nav className="breadcrumb" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <span>›</span>
-          {breadcrumb && <><Link href={breadcrumb.href}>{breadcrumb.label}</Link><span>›</span></>}
-          <span className="current">{breadcrumbLabel || title}</span>
-        </nav>
-        <div className="page-hero-grid">
-          <div>
-            <div className="section-tag" style={{ marginBottom: '16px' }}>{tag}</div>
-            <h1 style={{ color: 'white', marginBottom: '16px' }}>{title}</h1>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', maxWidth: '520px', marginBottom: '32px' }}>
-              {subtitle}
-            </p>
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+        <div className="hero-inner">
+          <div className="hero-content">
+            <nav className="breadcrumb" aria-label="Breadcrumb" style={{ marginBottom: '24px' }}>
+              <Link href="/">Home</Link>
+              <span>›</span>
+              {breadcrumb && <><Link href={breadcrumb.href}>{breadcrumb.label}</Link><span>›</span></>}
+              <span className="current">{breadcrumbLabel || title}</span>
+            </nav>
+            
+            <div className="hero-badge">
+              <span className="hero-badge-dot" aria-hidden="true"></span>
+              {tag}
+            </div>
+            
+            <h1 className="hero-title">{title}</h1>
+            <p className="hero-subtitle">{subtitle}</p>
+            
+            <div className="hero-actions">
               <a href="tel:07030370076" className="btn btn-call btn-lg">
-                <Phone size={14} /> 07030370076
+                <Phone size={14} /> Call: 07030370076
               </a>
               <a href="https://wa.me/917030370076" className="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <WhatsAppIcon size={18} /> WhatsApp
               </a>
             </div>
-            {children && (
-              <div style={{ marginTop: '24px' }}>
-                {children}
-              </div>
-            )}
+            
+            {children && <div className="page-hero-children">{children}</div>}
           </div>
-          <div className="hero-img-card">
-            <Image src={image} alt={imageAlt} fill style={{ objectFit: 'cover' }} priority />
+          
+          <div className="hero-image-wrap" aria-hidden="true">
+            <div className="hero-image-card">
+              <Image src={image} alt={imageAlt} width={600} height={520} priority />
+            </div>
+            <div className="hero-float-card card-1">
+              <div className="float-icon green"><CheckCircle size={14} style={{ color: 'var(--success)' }} /></div>
+              <div><div className="float-title">Same Day Service</div><div className="float-sub">Book & get serviced today</div></div>
+            </div>
+            <div className="hero-float-card card-2">
+              <div className="float-icon blue">⭐</div>
+              <div><div className="float-title">4.8/5 Rating</div><div className="float-sub">500+ happy customers</div></div>
+            </div>
           </div>
+          
         </div>
       </div>
     </section>

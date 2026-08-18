@@ -1,10 +1,11 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollRevealInit from '@/components/ScrollReveal';
 
-const inter = Inter({ subsets: ['latin'], weight: ['300','400','500','600','700','800','900'] });
+const inter = Inter({ subsets: ['latin'], weight: ['300','400','500','600','700','800','900'], variable: '--font-inter' });
+const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700','800','900'], variable: '--font-poppins' });
 
 export const metadata = {
   title: 'RO Service Pune | Aquaguard, Kent, Pureit Water Purifier Repair | AquaguardService',
@@ -22,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body suppressHydrationWarning>
         <Navbar />
         <ScrollRevealInit />

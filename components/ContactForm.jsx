@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Phone, MessageCircle, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, MapPin, Clock, Send } from 'lucide-react';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', phone: '', area: '', brand: '', service: '', message: '' });
@@ -37,7 +38,7 @@ export default function ContactForm() {
         <div className="contact-grid">
           <div className="contact-info">
             <div className="contact-item reveal"><div className="contact-item-icon"><Phone size={14} /></div><div className="contact-item-text"><h4>Phone / Call Us</h4><a href="tel:07030370076">07030370076</a></div></div>
-            <div className="contact-item reveal reveal-delay-1"><div className="contact-item-icon"><MessageCircle size={14} /></div><div className="contact-item-text"><h4>WhatsApp</h4><a href="https://wa.me/917030370076" target="_blank" rel="noopener">+91 70303 70076</a></div></div>
+            <div className="contact-item reveal reveal-delay-1"><div className="contact-item-icon"><WhatsAppIcon size={14} /></div><div className="contact-item-text"><h4>WhatsApp</h4><a href="https://wa.me/917030370076" target="_blank" rel="noopener">+91 70303 70076</a></div></div>
             <div className="contact-item reveal reveal-delay-2"><div className="contact-item-icon"><MapPin size={14} /></div><div className="contact-item-text"><h4>Our Address</h4><p>Office No 1202, Giriraj Grandiose Complex,<br/>Bhujbal Vasti, Wakad,<br/>Pimpri-Chinchwad, Maharashtra 411057</p></div></div>
             <div className="contact-item reveal reveal-delay-3"><div className="contact-item-icon"><Clock size={14} /></div><div className="contact-item-text"><h4>Working Hours</h4><p>Monday – Sunday<br/>8:00 AM – 11:30 PM</p></div></div>
           </div>
