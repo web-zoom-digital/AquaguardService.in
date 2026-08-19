@@ -36,7 +36,23 @@ export default function LocationsPage() {
             <h2 id="areas-heading" className="section-title">Find RO Service in Your Area</h2>
             <p className="section-subtitle">Click on your area to see dedicated RO service details, pricing &amp; availability near you.</p>
           </div>
-          <LocationGridClient locations={locations} />
+        </div>
+        
+        <div className="loc-master-box reveal">
+          <div className="loc-grid-scroll-area">
+            <LocationGridClient locations={locations} />
+          </div>
+          
+          <div className="loc-sidebar-fixed">
+            <div className="loc-sliding-track-tall">
+              {locations.map((loc) => (
+                <div key={loc.slug} className="loc-slide-item-tall"><MapPin size={16} /> {loc.name}</div>
+              ))}
+              {locations.map((loc) => (
+                <div key={loc.slug + '-dup'} className="loc-slide-item-tall"><MapPin size={16} /> {loc.name}</div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   Menu, X, Phone, Droplet, ChevronDown, Disc3, Hexagon, Gem, Tags,
-  Mail, MapPin, Facebook, Instagram, Linkedin, ClipboardList, Sparkles, ArrowRight
+  Mail, MapPin, Facebook, Instagram, Linkedin, ClipboardList, Sparkles, ArrowRight,
+  Wrench, Settings, RefreshCw, Droplets
 } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
@@ -73,16 +74,80 @@ export default function Navbar() {
             <li><Link href="/" className={isActive('/') ? 'active' : ''}>Home</Link></li>
             <li className="nav-dropdown">
               <Link href="/all-brands">Brands <ChevronDown size={14} /></Link>
-              <ul className="dropdown-menu" role="list">
-                <li><Link href="/aquaguard"><Droplet size={16} /> Aquaguard RO</Link></li>
-                <li><Link href="/kent-ro"><Disc3 size={16} /> Kent RO</Link></li>
-                <li><Link href="/pureit"><Disc3 size={16} /> Pureit RO</Link></li>
-                <li><Link href="/ao-smith"><Hexagon size={16} /> AO Smith RO</Link></li>
-                <li><Link href="/livpure"><Gem size={16} /> Livpure RO</Link></li>
-                <li><Link href="/all-brands"><Tags size={16} /> All Brands</Link></li>
-              </ul>
+              <div className="dropdown-menu">
+                <div className="mega-menu-grid">
+                  <Link href="/aquaguard" className="mega-menu-card">
+                    <div className="mega-menu-icon"><Droplet size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>Aquaguard RO</h4>
+                      <p>Expert service & repair for all Aquaguard models.</p>
+                    </div>
+                  </Link>
+                  <Link href="/kent-ro" className="mega-menu-card">
+                    <div className="mega-menu-icon"><Disc3 size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>Kent RO</h4>
+                      <p>Specialized maintenance for Kent purifiers.</p>
+                    </div>
+                  </Link>
+                  <Link href="/pureit" className="mega-menu-card">
+                    <div className="mega-menu-icon"><Disc3 size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>Pureit RO</h4>
+                      <p>Complete care for HUL Pureit water purifiers.</p>
+                    </div>
+                  </Link>
+                  <Link href="/ao-smith" className="mega-menu-card">
+                    <div className="mega-menu-icon"><Hexagon size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>AO Smith</h4>
+                      <p>Genuine parts and service for AO Smith ROs.</p>
+                    </div>
+                  </Link>
+                </div>
+                <div className="mega-menu-footer">
+                  <Link href="/all-brands">View All Brands <ArrowRight size={14} /></Link>
+                </div>
+              </div>
             </li>
-            <li><Link href="/services" className={isActive('/services') ? 'active' : ''}>Services</Link></li>
+            <li className="nav-dropdown">
+              <Link href="/services" className={isActive('/services') ? 'active' : ''}>Services <ChevronDown size={14} /></Link>
+              <div className="dropdown-menu">
+                <div className="mega-menu-grid">
+                  <Link href="/services#repair" className="mega-menu-card">
+                    <div className="mega-menu-icon"><Wrench size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>RO Repair</h4>
+                      <p>Quick fixes for leakage, flow, or taste issues.</p>
+                    </div>
+                  </Link>
+                  <Link href="/services#installation" className="mega-menu-card">
+                    <div className="mega-menu-icon"><Settings size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>RO Installation</h4>
+                      <p>Professional fitting and relocation services.</p>
+                    </div>
+                  </Link>
+                  <Link href="/services#filter-change" className="mega-menu-card">
+                    <div className="mega-menu-icon"><RefreshCw size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>Filter Change</h4>
+                      <p>Timely replacement of cartridges and membranes.</p>
+                    </div>
+                  </Link>
+                  <Link href="/services#amc" className="mega-menu-card">
+                    <div className="mega-menu-icon"><ClipboardList size={20} /></div>
+                    <div className="mega-menu-content">
+                      <h4>AMC Plans</h4>
+                      <p>Annual maintenance for worry-free pure water.</p>
+                    </div>
+                  </Link>
+                </div>
+                <div className="mega-menu-footer">
+                  <Link href="/services">Explore All Services <ArrowRight size={14} /></Link>
+                </div>
+              </div>
+            </li>
             <li><Link href="/locations" className={isActive('/locations') ? 'active' : ''}>Locations</Link></li>
             <li><Link href="/blog" className={isActive('/blog') ? 'active' : ''}>Blog</Link></li>
             <li><Link href="/contact" className={isActive('/contact') ? 'active' : ''}>Contact</Link></li>
