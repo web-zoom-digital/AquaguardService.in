@@ -4,7 +4,8 @@ import ContactForm from '@/components/ContactForm';
 import FaqSection from '@/components/FaqSection';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import TestimonialsMarquee from '@/components/TestimonialsMarquee';
-import { Phone, MessageCircle, CheckCircle, Zap, Lock, User, Coins, Clock, Wrench, Settings, RefreshCw, ClipboardList, Factory, Droplets, Droplet, Disc3, Hexagon, Gem, Tags } from 'lucide-react';
+import BrandSpecialistsGrid from '@/components/BrandSpecialistsGrid';
+import { Phone, MessageCircle, CheckCircle, Zap, Lock, User, Coins, Clock, Wrench, Settings, RefreshCw, ClipboardList, Factory, Droplets, Droplet, Disc3, Hexagon, Gem, Tags, ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'RO Service Pune | Aquaguard, Kent, Pureit Water Purifier Repair | AquaguardService',
@@ -127,14 +128,7 @@ export default function HomePage() {
             <h2 id="brands-heading" className="section-title">We Service All Major RO Brands</h2>
             <p className="section-subtitle">Select your brand to learn more about our dedicated service for your water purifier.</p>
           </div>
-          <div className="brand-pages-grid">
-            <Link href="/aquaguard" className="brand-page-card reveal"><div className="brand-icon-wrap"><Droplet size={20} /></div><div className="brand-page-info"><h3>Aquaguard RO Service</h3><p>Aquaguard RO service, repair & installation in Pune. Eureka Forbes authorised support.</p></div></Link>
-            <Link href="/kent-ro" className="brand-page-card reveal reveal-delay-1"><div className="brand-icon-wrap"><Disc3 size={20} /></div><div className="brand-page-info"><h3>Kent RO Service Pune</h3><p>Kent RO repair, filter change & AMC service near you in Pune & Pimpri-Chinchwad.</p></div></Link>
-            <Link href="/pureit" className="brand-page-card reveal reveal-delay-2"><div className="brand-icon-wrap"><Disc3 size={20} /></div><div className="brand-page-info"><h3>Pureit RO Service Pune</h3><p>HUL Pureit water purifier service, installation & repair across Pune.</p></div></Link>
-            <Link href="/ao-smith" className="brand-page-card reveal reveal-delay-3"><div className="brand-icon-wrap"><Hexagon size={20} /></div><div className="brand-page-info"><h3>AO Smith RO Service</h3><p>AO Smith water purifier service, RO system installation & repair in Pune.</p></div></Link>
-            <Link href="/livpure" className="brand-page-card reveal"><div className="brand-icon-wrap"><Gem size={20} /></div><div className="brand-page-info"><h3>Livpure RO Service Pune</h3><p>Livpure RO repair, service center & AMC plans available in Pune.</p></div></Link>
-            <Link href="/all-brands" className="brand-page-card reveal reveal-delay-1"><div className="brand-icon-wrap"><Tags size={20} /></div><div className="brand-page-info"><h3>All Other Brands</h3><p>LG, Sharp, Faber, Havells, Blue Star, Zero B, Aquafresh, Nasaka, Usha, Hindware & more.</p></div></Link>
-          </div>
+          <BrandSpecialistsGrid />
         </div>
       </section>
 

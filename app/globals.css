@@ -1520,63 +1520,108 @@ p {
 /* ---- Brand Pages Grid ---- */
 .brand-pages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
 }
 
 .brand-page-card {
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 32px 28px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  transition: all var(--transition-slow);
+  gap: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.brand-page-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 163, 224, 0.05) 0%, rgba(0, 163, 224, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
 }
 
 .brand-page-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
-  border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(0, 77, 115, 0.08);
+  transform: translateY(-5px);
+  border-color: rgba(0, 163, 224, 0.2);
+}
+
+.brand-page-card:hover::before {
+  opacity: 1;
 }
 
 .brand-icon-wrap {
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-md);
-  background: var(--gray-50);
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(0, 163, 224, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  color: var(--primary);
   flex-shrink: 0;
-  transition: all var(--transition);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1;
 }
 
 .brand-page-card:hover .brand-icon-wrap {
-  background: var(--accent-glow);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 163, 224, 0.3);
+}
+
+.brand-page-info {
+  flex: 1;
+  z-index: 1;
 }
 
 .brand-page-info h3 {
-  font-size: 1rem;
-  margin-bottom: 4px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.brand-page-card:hover .brand-page-info h3 {
+  color: var(--primary);
 }
 
 .brand-page-info p {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
-.brand-page-info .arrow {
-  color: var(--accent);
+.brand-arrow {
+  color: var(--primary);
   opacity: 0;
-  transition: all var(--transition);
+  transform: translateX(-15px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 163, 224, 0.08);
 }
 
-.brand-page-card:hover .brand-page-info .arrow {
+.brand-page-card:hover .brand-arrow {
   opacity: 1;
+  transform: translateX(0);
 }
 
 /* ---- Why Choose Us ---- */
@@ -3572,6 +3617,29 @@ p {
   }
   .hero-stats {
     justify-content: center;
+  }
+  
+  /* Location Grid: Force 2 columns on mobile */
+  .loc-area-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+  .loc-area-card {
+    padding: 24px 12px;
+  }
+  .loc-area-card-name {
+    font-size: 0.9rem;
+  }
+  .loc-area-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .loc-area-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .loc-area-card-cta {
+    font-size: 0.75rem;
   }
 }
 
