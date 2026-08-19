@@ -11,10 +11,17 @@ export const metadata = {
 };
 
 const faqs = [
-  { q: 'Do you provide AO Smith service at home in Pune?', a: 'Yes! We provide doorstep AO Smith RO water purifier service across all areas of Pune and Pimpri-Chinchwad. Same-day slots available.' },
-  { q: 'How much does AO Smith RO service cost in Pune?', a: 'Basic AO Smith RO service starts from ₹299. Filter change, membrane replacement, and repair costs vary by model. We give a transparent estimate before starting.' },
-  { q: 'How often should I service my AO Smith water purifier?', a: "We recommend servicing your AO Smith RO every 6 months. Pune's hard water can clog filters faster. Annual Maintenance Contracts (AMC) are also available." },
-  { q: 'Do you use genuine AO Smith spare parts?', a: 'Yes, we use only genuine or high-quality compatible parts for AO Smith RO purifiers — filters, membranes, pumps and more.' }
+  { q: 'AO Smith RO me hot water aana band ho gaya hai, kya kharab hua hoga?', a: 'AO Smith ke hot water models (jaise Z8, Z9) me heater tank ya thermostat me fault aa sakta hai. Humara technician heater coil aur sensors check karke use repair kar dega.' },
+  { q: 'AO Smith Z9 model ki servicing ka kitna charge hota hai?', a: 'Z8 aur Z9 thode premium models hain jinme ART (Advance Recovery Technology) aur hot water hota hai. Iski service ₹499 se start hoti hai aur filters ka rate check karke bataya jata hai.' },
+  { q: 'Kya aapke paas AO Smith ke original MIN-TECH (Mineraliser) filter milenge?', a: 'Haan ji bilkul. AO Smith ka MIN-TECH filter paani me calcium aur magnesium add karta hai. Hum 100% original mineralizer hi lagate hain taaki paani ka taste natural rahe.' },
+  { q: 'Machine se continuously beep ki aawaz aa rahi hai, band kaise hogi?', a: 'Yeh filter change alert hai. Display par red light bhi blink ho rahi hogi. Technician ko bula kar filter (SCMT ya RO membrane) change karwana padega tabhi aawaz band hogi.' },
+  { q: 'Paani ka flow pehle se bahut kam ho gaya hai, tank nahi bhar raha?', a: 'Iska sabse common reason hai pre-filter block hona ya pump ka pressure kam ho jana. Pune ke hard water me filter jaldi block hote hain, hum use clean ya replace kar denge.' },
+  { q: 'Kya AO Smith ki Green RO series ko repair kar sakte ho aap?', a: 'Yes! Green RO series (jo paani save karti hai) ki hume puri knowledge hai. Uske advanced ART elements aur reject water valves hum theek kar sakte hain.' },
+  { q: 'Kya Pimpri-Chinchwad me same-day AO Smith service mil jayegi?', a: 'Haan, humara ek service center Pimpri-Chinchwad area ko cover karta hai. Pimple Saudagar, Wakad aur Nigdi me same-day service guarantee hai.' },
+  { q: 'Purane filter nikaal ke naye dalwane me kitna time lagta hai?', a: 'Service me mushkil se 30-40 minute lagte hain. Technician aapke samne seal khol kar naye filters lagayega aur machine ko andar bahar se clean karega.' },
+  { q: 'TDS bahut low (under 20) ho gaya hai, health ke liye theek nahi hai na?', a: 'Sahi baat hai, bahut low TDS theek nahi hota. AO Smith me hum MIN-TECH filter ya TDS controller adjust karke TDS ko healthy level (50-150) par set kar denge.' },
+  { q: 'AO Smith AMC plan me hot water tank ki warranty milti hai?', a: 'Comprehensive AMC me sabhi electrical aur heating parts cover hote hain. Agar heater kharab ho jaye toh free me replace hota hai.' },
+  { q: 'Machine ke andar se jalne ki (burning) smell aa rahi hai?', a: 'Iska matlab current fluctuation se adapter (SMPS) jal gaya hai ya wiring short hui hai. Turant power off karein aur hume call karein, hum half-hour me fix kar denge.' }
 ];
 
 export default function Page() {

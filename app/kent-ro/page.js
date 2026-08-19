@@ -11,10 +11,17 @@ export const metadata = {
 };
 
 const faqs = [
-  { q: 'Do you provide Kent service at home in Pune?', a: 'Yes! We provide doorstep Kent RO water purifier service across all areas of Pune and Pimpri-Chinchwad. Same-day slots available.' },
-  { q: 'How much does Kent RO service cost in Pune?', a: 'Basic Kent RO service starts from ₹299. Filter change, membrane replacement, and repair costs vary by model. We give a transparent estimate before starting.' },
-  { q: 'How often should I service my Kent water purifier?', a: "We recommend servicing your Kent RO every 6 months. Pune's hard water can clog filters faster. Annual Maintenance Contracts (AMC) are also available." },
-  { q: 'Do you use genuine Kent spare parts?', a: 'Yes, we use only genuine or high-quality compatible parts for Kent RO purifiers — filters, membranes, pumps and more.' }
+  { q: 'Kent RO ka TDS meter kaise set karte hain?', a: 'Kent models me TDS controller diya hota hai. Humare technician TDS meter se tap water aur RO water check karke TDS ko 50-150 ke bich me perfectly set kar dete hain taaki paani me minerals bani rahein.' },
+  { q: 'UV lamp change karne ka kya charge hai Kent Grand me?', a: 'UV lamp ka cost around ₹450 se ₹600 ke bich aata hai depending on wattage (11W). Yeh paani ke bacteria ko marta hai, isliye agar UV fail alarm baje toh isko turant change karwana chahiye.' },
+  { q: 'Mere Kent RO se lagatar aawaz aa rahi hai (beeping), kya issue hai?', a: 'Beep sound aane ke 2 main reason hote hain Kent me - ya toh UV lamp fail ho gaya hai, ya filter change alarm baj raha hai. Dono cases me technician ko bula kar part change karwana padega.' },
+  { q: 'Kent RO ki membrane block ho gayi hai, original wali milegi?', a: 'Haan, hum 100% genuine Kent RO membrane (75 GPD / 100 GPD) use karte hain. Membrane block hone par paani ka flow bahut kam ho jata hai.' },
+  { q: 'RO ka reject water flow band ho gaya hai, kya problem hai?', a: 'Iska matlab aapke RO ka FR (Flow Restrictor) block ho gaya hai. FR block hone se RO membrane jaldi kharab ho sakti hai. Isko jaldi se replace karwana zaroori hai.' },
+  { q: 'Filter change package me kya kya cover hota hai?', a: 'Kent filter kit me normally Sediment Filter, Pre-Carbon Filter aur Post-Carbon filter change hota hai. Iske sath hum pure tank ki deep cleaning free me karte hain.' },
+  { q: 'Kya aap Baner ya Wakad area me Kent RO service dete hain?', a: 'Bilkul! Baner, Wakad, Balewadi, Pimple Saudagar me humari 4 teams har roz kaam karti hain. Aap jab call karenge, within hours service mil jayegi.' },
+  { q: 'Naya Kent RO shift karwana hai dusre flat me, installation ka kitna charge hai?', a: 'Uninstallation aur re-installation dono milake nominal charges hote hain. Hum pipe fitting aur leakage check proper karke dete hain.' },
+  { q: 'Kent Supreme aur Kent Pearl dono ki service ho jayegi?', a: 'Haan ji, Kent Grand, Grand+, Supreme, Pearl, Pride - hum Kent ke sabhi models ka repair aur service karte hain.' },
+  { q: 'Kya service ke baad parts par warranty milti hai?', a: 'Haan, jo bhi naya filter, membrane ya electrical part (pump, SMPS, SV) hum lagate hain, us par company ki taraf se proper warranty milti hai. Bill me sab likha hota hai.' },
+  { q: 'Mera RO chalte chalte achanak band ho gaya, light nahi aa rahi?', a: 'Wiring loose ho sakti hai ya SMPS (adapter) kharab ho gaya hoga. Yeh bahut common issue hai jo adhe ghante me solve ho jayega aapke ghar par hi.' }
 ];
 
 export default function Page() {

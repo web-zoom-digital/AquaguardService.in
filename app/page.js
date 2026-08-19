@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import FaqSection from '@/components/FaqSection';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import TestimonialsMarquee from '@/components/TestimonialsMarquee';
 import { Phone, MessageCircle, CheckCircle, Zap, Lock, User, Coins, Clock, Wrench, Settings, RefreshCw, ClipboardList, Factory, Droplets, Droplet, Disc3, Hexagon, Gem, Tags } from 'lucide-react';
 
 export const metadata = {
@@ -11,11 +12,17 @@ export const metadata = {
 };
 
 const faqs = [
-  { q: 'How do I book an RO service in Pune?', a: 'Simply call us at 07030370076 or send a WhatsApp message. Tell us your location in Pune, the brand of your RO purifier, and the issue. We\'ll book a convenient time slot for you — same-day service available.' },
-  { q: 'Which brands of RO water purifiers do you service?', a: 'We service all major brands including Aquaguard, Kent RO, Pureit (HUL), AO Smith, Livpure, LG, Sharp, Faber, Havells, Blue Star, Zero B, Aquafresh, Aquamarine, Lexpure, Bluemount, Nasaka, Usha, Hindware, and more.' },
-  { q: 'Do you provide same-day RO service in Pune?', a: 'Yes! We offer same-day RO service across most areas of Pune and Pimpri-Chinchwad. Book before noon for guaranteed same-day service. Our technicians cover Wakad, Hinjewadi, Baner, Kharadi, Hadapsar, and 35+ more areas.' },
-  { q: 'What is the cost of RO service in Pune?', a: 'Basic RO service (cleaning + checkup) starts from ₹299. Filter changes, membrane replacement, and repair costs vary by brand and issue. We provide a transparent estimate before starting any work — no hidden charges.' },
-  { q: 'How often should I get my RO purifier serviced?', a: 'We recommend a full service every 6 months. Pune\'s water (especially in Wakad, Hinjewadi, and hard water zones) can clog filters faster. The membrane should be replaced every 2–3 years depending on usage.' },
+  { q: 'Bhaiya, RO service book karne ke baad technician kitni der me aata hai?', a: 'Pune me humari koshish rehti hai ki 2 se 3 ghante ke andar technician aapke ghar pahunch jaye. Same-day service bilkul available hai, bas aap subah ya dopahar me book kar lijiye.' },
+  { q: 'What is the visiting charge if I just want to get my RO checked?', a: 'Humara basic visiting and inspection charge bahut hi nominal (₹150-₹200) hai. Agar aap repair karwa lete hain, toh yeh visiting charge waive off (free) ho jata hai!' },
+  { q: 'RO se continuously paani leak ho raha hai, kya problem ho sakti hai?', a: 'Leakage ke kai reason ho sakte hain - jaise loose fittings, pipe cut hona, ya filter housing ka crack hona. Humara technician aake exact issue bata dega aur wahi pe repair kar dega.' },
+  { q: 'Filter change karne ka kitna kharcha aayega?', a: 'Filter change ka cost depend karta hai ki kaunsa filter kharab hai (Spun, Carbon, ya RO Membrane) aur aapka purifier kaunsi brand ka hai. Hum genuine parts use karte hain aur market se better price dete hain.' },
+  { q: 'Can you service my 8-year-old local brand RO?', a: 'Haan bilkul! Hum saare branded (Aquaguard, Kent) aur unbranded (local assembled) RO purifiers ki service aur repair karte hain.' },
+  { q: 'Paani ka taste thoda kadwa aa raha hai, aisa kyun?', a: 'Iska matlab aapke RO ki membrane block ho gayi hai ya TDS level galat set hai. Membrane change karne se paani ka taste wapas bisleri jaisa meetha ho jayega.' },
+  { q: 'Kya aap repair mein genuine company ke parts use karte hain?', a: '100% genuine parts! Hum duplicate ya saste parts use nahi karte kyunki hume pata hai ki peene ke paani ki quality kitni important hai. Har part par warranty milti hai.' },
+  { q: 'Do you provide Annual Maintenance Contracts (AMC)?', a: 'Yes, hum 1-year aur 2-year ke AMC plans offer karte hain jisme periodic servicing aur filter changes cover hote hain. Yeh plans aapke monthly kharche ko bahut bacha lete hain.' },
+  { q: 'Mera RO machine bilkul on nahi ho raha, dead lag raha hai?', a: 'Aise case me mostly SMPS (power adapter) jal gaya hota hai ya wiring me issue hota hai. Ghabraiye mat, yeh bahut minor issue hai jo on-the-spot fix ho jayega.' },
+  { q: 'What payment methods do you accept after service?', a: 'Aap technician ko directly Google Pay, PhonePe, Paytm, ya Cash de sakte hain. Service complete hone ke baad hi payment karni hoti hai.' },
+  { q: 'Hinjewadi me service available hai kya?', a: 'Haan ji! Hum Hinjewadi, Wakad, Baner, Kothrud, Kharadi, Hadapsar aur pure Pune & Pimpri-Chinchwad me service dete hain.' }
 ];
 
 export default function HomePage() {
@@ -138,11 +145,7 @@ export default function HomePage() {
             <div className="section-tag">Customer Reviews</div>
             <h2 id="testimonials-heading" className="section-title">What Our Customers Say</h2>
           </div>
-          <div className="testimonials-grid">
-            <article className="testimonial-card reveal"><div className="testimonial-stars">★★★★★</div><p className="testimonial-text">"Excellent service! The technician came within 2 hours and fixed my Aquaguard RO. Very professional and explained everything clearly."</p><div className="testimonial-author"><div className="testimonial-avatar">R</div><div><div className="testimonial-name">Rahul Patil</div><div className="testimonial-location">Wakad, Pune</div></div></div></article>
-            <article className="testimonial-card reveal reveal-delay-1"><div className="testimonial-stars">★★★★★</div><p className="testimonial-text">"Got my Kent RO serviced and filters changed. Pricing was fair and transparent. Will definitely call again for the AMC."</p><div className="testimonial-author"><div className="testimonial-avatar">S</div><div><div className="testimonial-name">Sneha Joshi</div><div className="testimonial-location">Baner, Pune</div></div></div></article>
-            <article className="testimonial-card reveal reveal-delay-2"><div className="testimonial-stars">★★★★★</div><p className="testimonial-text">"AO Smith RO installation done perfectly. The team was on time, clean and professional. Very happy with the service."</p><div className="testimonial-author"><div className="testimonial-avatar">A</div><div><div className="testimonial-name">Amit Sharma</div><div className="testimonial-location">Hinjewadi, Pune</div></div></div></article>
-          </div>
+          <TestimonialsMarquee />
         </div>
       </section>
 

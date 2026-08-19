@@ -12,9 +12,17 @@ export const metadata = {
 };
 
 const faqs = [
-  { q: 'How do I know when my RO filter needs changing?', a: "Key signs include: change in water taste or odour, slow water flow, unusual machine noises, water leakage, or the filter alarm light blinking. Replace filters every 6–12 months depending on your usage and water quality." },
-  { q: 'What is the difference between RO, UV and UF purifiers?', a: "RO (Reverse Osmosis) removes dissolved salts, heavy metals, and bacteria — best for hard water. UV kills bacteria and viruses but doesn't remove dissolved salts. UF removes bacteria and larger particles without electricity. Most modern purifiers combine two or more technologies." },
-  { q: 'Is Pune tap water safe without a purifier?', a: "Pune's municipal water meets basic safety standards, but areas like Wakad, Hinjewadi, and some parts of Pimpri-Chinchwad receive water with higher TDS (Total Dissolved Solids) and hardness. A good RO purifier is strongly recommended for safe drinking water." },
+  { q: 'Pune ke water me kitna TDS safe hota hai peene ke liye?', a: 'WHO ke hisaab se peene ke paani ka TDS 50 se 150 mg/L ke bich me best hota hai. Pune me PMC water ka TDS theek hota hai, par borewell water ka TDS 500+ ja sakta hai jisme RO zaroori hai.' },
+  { q: 'Kya RO machine sach me paani ke saare minerals nikal deti hai?', a: 'Haan, purane RO models 90% minerals nikal dete the. Par aaj kal ke models me Mineraliser (Alkaline filter) ya TDS controller laga hota hai, jo calcium aur magnesium wapas add kar deta hai.' },
+  { q: 'RO machine me UV aur UF ka kya kaam hota hai?', a: 'RO dissolved impurities (jaise namak) nikalta hai, UV (Ultraviolet) lamp paani ke bacteria aur viruses ko marta hai, aur UF (Ultra-filtration) un mare hue germs ko paani se alag karta hai. Teeno milke paani ko 100% safe banate hain.' },
+  { q: 'Sardiyon me RO ka paani thanda lagta hai, kya isme heater lag sakta hai?', a: 'Normal RO me alag se heater nahi lagta. Agar aapko direct hot water chahiye toh AO Smith Z8/Z9 ya Aquaguard ke hot water models purchase karne chahiye.' },
+  { q: 'Bina light (electricity) ke RO kaam karega kya?', a: 'Nahi bhaiya, RO aur UV ko chalne ke liye electricity zaroori hoti hai kyunki pump pressure se paani push karta hai. Haan, gravity-based UF filter bina light ke chal jate hain.' },
+  { q: 'RO water ka pH level kitna hona chahiye?', a: 'Ideal pH level 7.0 se 8.5 ke bich hona chahiye (slightly alkaline). Agar aapka paani acidic (kadwa) lag raha hai, toh Alkaline filter lagwana sabse best solution hai.' },
+  { q: 'Alkaline water peene ke kya faide hote hain?', a: 'Alkaline water immunity badhata hai, acidity aur gas ki problem kam karta hai, aur body ko better hydrate karta hai. Hum kisi bhi normal RO ko 2000 rupaye me Alkaline RO me upgrade kar sakte hain.' },
+  { q: 'Mujhe apna RO kitne mahine me service karwana chahiye?', a: 'Pune aur PCMC area (jaise Wakad, Hinjewadi) jahan borewell ka paani aata hai, wahan har 4-6 mahine me pre-filter badalna zaroori hai. Full service saal me ek baar honi chahiye.' },
+  { q: 'Kya RO waste water ko use kiya ja sakta hai?', a: 'Bilkul! RO se nikalne wala reject water plants (paudho) me daalne ke liye ya farsh dhone ke liye use kiya ja sakta hai. Isse paani ki kafi bachat hoti hai.' },
+  { q: 'RO filter change karte waqt kya precautions lene chahiye?', a: 'Hamesha dhyan rakhein ki nayi membrane ki seal aapke samne khule, aur filter change ke baad 1-2 tanki paani drain (faink) zaroor dein taaki carbon dust nikal jaye.' },
+  { q: 'Mera RO filter 2 saal se theek chal raha hai, kya ab badalna zaroori hai?', a: 'Haan, filter bahar se theek lag sakta hai par andar se uske pores block ho jate hain aur wo bacteria trap karna band kar deta hai. 2 saal me membrane change karna bahut zaroori hai.' }
 ];
 
 export default function BlogPage() {

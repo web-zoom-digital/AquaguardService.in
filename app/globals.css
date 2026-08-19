@@ -1328,27 +1328,70 @@ p {
 }
 
 .brand-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
+  gap: 12px;
+  padding: 12px 28px;
   background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  font-size: 0.9rem;
-  font-weight: 600;
+  border: 1px solid rgba(0, 77, 115, 0.08);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--text-dark);
-  transition: all var(--transition);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 
+    0 4px 15px rgba(0, 77, 115, 0.05), 
+    inset 0 -3px 0 rgba(0, 77, 115, 0.05);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Shine Animation */
+.brand-chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.brand-chip:hover::before {
+  left: 150%;
 }
 
 .brand-chip:hover {
-  background: var(--primary-light);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 
+    0 15px 30px rgba(0, 77, 115, 0.25), 
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.brand-chip .brand-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: rgba(0, 163, 224, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.brand-chip:hover .brand-emoji {
   color: var(--primary);
-  border-color: rgba(0,77,115,0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,77,115,0.12);
+  background: var(--white);
+  transform: rotate(15deg) scale(1.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .brand-chip a {
@@ -1721,24 +1764,70 @@ p {
   font-size: 0.84rem;
 }
 
-/* ---- Testimonials ---- */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
+/* ---- Testimonials Marquee ---- */
+.testimonials-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
 }
 
+/* Fade edges for marquee */
+.testimonials-marquee-container::before,
+.testimonials-marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.testimonials-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-light) 0%, transparent 100%);
+}
+.testimonials-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-light) 0%, transparent 100%);
+}
+
+.testimonials-marquee-track {
+  display: flex;
+  gap: 24px;
+  animation: scrollMarquee 45s linear infinite;
+  padding-left: 24px;
+}
+
+.testimonials-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Base Testimonial Card Styling */
 .testimonial-card {
+  width: 350px;
+  flex-shrink: 0;
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: all var(--transition-slow);
+  padding: 30px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: transform 0.3s ease;
 }
 
 .testimonial-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .testimonial-stars {
@@ -2258,25 +2347,43 @@ p {
 }
 
 /* ---- FAQ ---- */
+/* ---- FAQs ---- */
+/* ---- FAQs ---- */
+.faq-section {
+  background: var(--bg-light); /* Soft background for contrast */
+  padding: 80px 0;
+}
+
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 800px;
+  gap: 20px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 .faq-item {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-left: 4px solid rgba(0, 163, 224, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   overflow: hidden;
-  transition: all var(--transition);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.faq-item:hover {
+  box-shadow: 0 15px 35px rgba(0, 77, 115, 0.06);
+  transform: translateY(-3px);
+  border-color: rgba(0, 163, 224, 0.2);
+  border-left-color: rgba(0, 163, 224, 0.5);
 }
 
 .faq-item.open {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  border-color: rgba(0, 163, 224, 0.3);
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 15px 40px rgba(0, 77, 115, 0.12);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(0, 163, 224, 0.03) 100%);
 }
 
 .faq-question {
@@ -2284,55 +2391,108 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 20px 24px;
+  gap: 24px;
+  padding: 24px 28px;
   text-align: left;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-dark);
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
 }
 
-.faq-question:hover {
-  color: var(--accent);
+.faq-q-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1;
+}
+
+.faq-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgba(0, 163, 224, 0.2);
+  line-height: 1.2;
+  transition: color 0.4s ease;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.faq-item:hover .faq-num {
+  color: rgba(0, 163, 224, 0.5);
+}
+
+.faq-item.open .faq-num {
+  color: var(--primary);
+}
+
+.faq-q-text {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  margin-top: 2px;
+}
+
+.faq-item.open .faq-q-text,
+.faq-question:hover .faq-q-text {
+  color: var(--primary);
 }
 
 .faq-icon {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: var(--gray-50);
+  background: var(--white);
+  border: 1px solid rgba(0, 163, 224, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  color: var(--accent);
-  transition: all var(--transition);
+  color: var(--primary);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.faq-item:hover .faq-icon {
+  background: rgba(0, 163, 224, 0.05);
 }
 
 .faq-item.open .faq-icon {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--white);
-  transform: rotate(45deg);
+  transform: rotate(180deg);
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(0, 77, 115, 0.3);
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 28px;
 }
 
 .faq-item.open .faq-answer {
-  max-height: 300px;
+  max-height: 500px;
+  padding-bottom: 28px;
 }
 
 .faq-answer-inner {
-  padding: 0 24px 20px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.7;
+  background: rgba(0, 163, 224, 0.04);
+  border-left: 3px solid rgba(0, 163, 224, 0.3);
+  border-radius: 8px 12px 12px 8px;
+  padding: 20px 24px;
+  font-size: 0.98rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-top: -8px;
+}
+
+.faq-view-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 /* ---- Animations ---- */
@@ -2375,6 +2535,15 @@ p {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+.animate-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* ---- Badges / Tags ---- */
 .badge {

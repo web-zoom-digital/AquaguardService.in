@@ -11,10 +11,17 @@ export const metadata = {
 };
 
 const faqs = [
-  { q: 'Do you provide Aquaguard service at home in Pune?', a: 'Yes! We provide doorstep Aquaguard RO water purifier service across all areas of Pune and Pimpri-Chinchwad. Same-day slots available.' },
-  { q: 'How much does Aquaguard RO service cost in Pune?', a: 'Basic Aquaguard RO service starts from ₹299. Filter change, membrane replacement, and repair costs vary by model. We give a transparent estimate before starting.' },
-  { q: 'How often should I service my Aquaguard water purifier?', a: "We recommend servicing your Aquaguard RO every 6 months. Pune's hard water can clog filters faster. Annual Maintenance Contracts (AMC) are also available." },
-  { q: 'Do you use genuine Aquaguard spare parts?', a: 'Yes, we use only genuine or high-quality compatible parts for Aquaguard RO purifiers — filters, membranes, pumps and more.' }
+  { q: 'Aquaguard RO me red light blink ho rahi hai aur beep sound aa raha hai, kya karun?', a: 'Bhaiya, yeh beep sound indicate karta hai ki aapka UV lamp ya filter expire ho gaya hai. Humara technician aa kar error code check karega aur filter/UV lamp replace karke isko theek kar dega.' },
+  { q: 'Mere Aquaguard RO ka filter change karne ka kitna charge aayega?', a: 'Aquaguard ke filters thode premium hote hain. Exact cost model par depend karta hai (jaise Enhance, Magna, ya Geneus). Par hum market se definitely sasta rate denge, genuine parts ke sath.' },
+  { q: 'Kya aap Aquaguard ke latest copper aur zinc water models ko repair kar sakte hain?', a: 'Haan ji, humari team trained hai. Active Copper aur Zinc booster cartridges dono humare paas available hote hain aur hum unko successfully install ya replace karte hain.' },
+  { q: 'Aquaguard ka AMC plan lene me kya faida hai?', a: 'AMC plan me saal me 2 baar general service aur 1 baar pre-filter change cover hota hai. Agar saal bhar me machine me koi fault aata hai, toh visiting charge free rehta hai.' },
+  { q: 'Tank bharne ke baad auto-cut off nahi ho raha, paani overflow ho raha hai?', a: 'Aise me tank ke andar laga float valve ya sensor kharab ho gaya hoga. Yeh bahut chota issue hai, technician aake sensor change kar dega aur paani overflow band ho jayega.' },
+  { q: 'Aquaguard ka pump kharab ho gaya hai, kya naya lagana padega?', a: 'Hum pehle pump ko check karte hain. Kai baar sirf pump ka head change karne se kaam chal jata hai jisse aapka kharcha bach jata hai. Agar pura pump jala hua hai, tabhi naya lagayenge.' },
+  { q: 'Paani ka taste thoda ajeeb aa raha hai pichle 2 din se?', a: 'Agar taste badal gaya hai, toh iska matlab aapka TDS level balance me nahi hai ya membrane choke ho rahi hai. Hum aake pehle TDS meter se check karenge phir hi solution denge.' },
+  { q: 'Mera Aquaguard Eureka Forbes company ka hai, kya aap log same service dete ho?', a: 'Haan bilkul, hum Eureka Forbes ke sabhi Aquaguard models (RO, UV, UF) me specialized hain. Humari service unki tarah hi professional hai bas thodi zyada fast aur affordable hai.' },
+  { q: 'Kya Viman Nagar me Aquaguard ki service available hai?', a: 'Haan, Viman Nagar, Kalyani Nagar aur pure Pune me humari teams active rehti hain. Call karne ke 2 ghante me service ho jayegi.' },
+  { q: 'Pre-filter (bahar wala filter) kitne din me badalna chahiye?', a: 'Pune ke borewell paani me kachra zyada aata hai, isliye pre-filter ko har 3-4 mahine me change kar lena chahiye. Isse andar ki expensive membrane bachi rehti hai.' },
+  { q: 'Mere Aquaguard me bilkul paani nahi aa raha, machine on hai?', a: 'Yeh solenoid valve (SV) ka issue ho sakta hai jo paani ka flow block kar deta hai kharab hone par. Technician ko aake SV aur carbon filter check karna hoga.' }
 ];
 
 export default function Page() {

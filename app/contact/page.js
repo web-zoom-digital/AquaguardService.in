@@ -9,9 +9,17 @@ export const metadata = {
 };
 
 const faqs = [
-  { q: 'How quickly can you send a technician?', a: 'For same-day bookings, we typically arrive within 2–4 hours. For scheduled appointments, we\'ll confirm an exact time slot convenient for you.' },
-  { q: 'What information do I need when I call?', a: 'Just tell us your name, area/locality in Pune, your RO brand and model (if known), and the issue you\'re facing. That\'s it!' },
-  { q: 'Do you charge for a diagnostic visit?', a: 'Our technician inspection/diagnostic visit is free of charge. We provide a transparent cost estimate before any work begins.' },
+  { q: 'Call karne ke baad aapka technician ghar kitni der me aata hai?', a: 'Agar aap subah book karte hain toh normally hum 2-3 ghante me aa jate hain. Same-day service ki guarantee tabhi hoti hai jab booking dopahar 2 baje se pehle ho jaye.' },
+  { q: 'Shop pe RO laana padega ya aap ghar aake theek karenge?', a: 'Nahi bhaiya, aapko machine leke kahin jaane ki zaroorat nahi hai. Hum 100% door-step service dete hain. Pura repair aapke ghar me, aapke samne hi hoga.' },
+  { q: 'Pune me kaun-kaun se areas me service dete hain aap?', a: 'Hum Pimpri-Chinchwad (PCMC) aur Pune city dono cover karte hain. Wakad, Hinjewadi, Baner, Kothrud, Kharadi, Hadapsar, Viman Nagar - sabhi jagah humari teams active hain.' },
+  { q: 'Service ke time agar parts change kiye toh kya warranty milegi?', a: 'Bilkul! Jo bhi electrical part ya RO membrane hum badalte hain, us par company ki proper warranty milti hai. Bill me sab details likhi hoti hain.' },
+  { q: 'Sunday ko bhi RO mechanic mil jayega kya?', a: 'Haan ji, hum Sunday ko bhi open rehte hain. Sunday ko demand zyada hoti hai isliye aap Saturday raat ko ya Sunday subah jaldi appointment book kar lein.' },
+  { q: 'Payment kaise karni hoti hai? Google Pay chalega?', a: 'Haan, aap technician ko directly Google Pay, PhonePe, Paytm ya cash de sakte hain. Payment hamesha service puri hone aur machine check karne ke baad hi karni hai.' },
+  { q: 'Booking karne ke liye kya details deni hoti hain?', a: 'Bas aapka naam, address (flat no. aur society name), RO ka brand aur exact problem (jaise paani leak ho raha hai ya machine on nahi ho rahi). Baaki hum dekh lenge.' },
+  { q: 'Kya aap visiting aur checking ka charge alag se lete ho?', a: 'Visiting charge sirf Rs. 150-200 hota hai. Par agar aap humse part repair ya filter change karwa lete hain, toh yeh visiting charge bill me se maaf (free) kar diya jata hai.' },
+  { q: 'Complaint register karne ke liye direct call karun ya WhatsApp?', a: 'Dono available hain! Agar aapko jaldi service chahiye toh direct call kar lijiye (07030370076). WhatsApp par aap machine ki photo bhi bhej sakte hain.' },
+  { q: 'Agar technician aane me let ho gaya toh kisse baat karni hai?', a: 'Aap humare isi customer care number par wapas call karke booking status pooch sakte hain. Waise humara system aapko technician ki ETA pehle hi SMS/WhatsApp kar deta hai.' },
+  { q: 'Machine theek hone ke baad aage maintenance kaise yaad rahega?', a: 'Hume pata hai aaj kal time nahi milta. Isliye humara system aapko next service (6 months ya 1 year baad) se pehle khud hi reminder message bhej deta hai.' }
 ];
 
 export default function ContactPage() {
